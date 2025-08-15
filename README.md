@@ -1,1 +1,2 @@
 # CLI-Based-To-Do-App
+The aim of this project is to build a to-do app that stores the given tasks in a folder. The app is controlled using the command line interface, making this a quick and easy learning project to practice file I/O in python.
