@@ -26,5 +26,8 @@ Commands:
     elif command == 'add':
         task = input('Enter task: ')
         addTask(databasePath, task)
+    elif command == 'list':
+        tasks = listTasks(databasePath)
+        print(tasks)
     
     

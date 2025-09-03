@@ -21,6 +21,13 @@ def addTask(path, title):
     conn.commit()
     conn.close()
     
+def listTasks(path):
+    conn = connect(path)
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM tasks')
+    tasks = cursor.fetchall()
+    conn.close()
+    return tasks
 
 
     
