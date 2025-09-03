@@ -24,7 +24,7 @@ def addTask(path, title):
 def listTasks(path):
     conn = connect(path)
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM tasks')
+    cursor.execute('SELECT * FROM tasks WHERE done = 0')
     tasks = cursor.fetchall()
     conn.close()
     return tasks
@@ -35,6 +35,13 @@ def completeTask(path, taskID):
     cursor.execute('UPDATE tasks SET done = 1 WHERE ID = ?', (taskID, ))
     conn.commit()
     conn.close()
+
+def reset(path):
+    conn = connect(path)
+    cursor = conn.cursor()
+    cursor.execute('DROP TABLE tasks')
+    conn.commit()
+    conn.close
 
 
 
