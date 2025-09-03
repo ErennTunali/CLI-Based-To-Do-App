@@ -14,6 +14,15 @@ def initDB(path):
     conn.commit()
     conn.close()
 
+def addTask(path, title):
+    conn = connect(path)
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO tasks (task) VALUES(?)', (title, ))
+    conn.commit()
+    conn.close()
+    
+
+
     
 
 

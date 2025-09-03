@@ -23,4 +23,8 @@ Commands:
     elif command == 'init':
         initDB(databasePath)
         print('DB initiliazed')
+    elif command == 'add':
+        task = input('Enter task: ')
+        addTask(databasePath, task)
+    
     
