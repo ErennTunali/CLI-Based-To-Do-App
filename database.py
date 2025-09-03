@@ -29,6 +29,14 @@ def listTasks(path):
     conn.close()
     return tasks
 
+def completeTask(path, taskID):
+    conn = connect(path)
+    cursor = conn.cursor()
+    cursor.execute('UPDATE tasks SET done = 1 WHERE ID = ?', (taskID, ))
+    conn.commit()
+    conn.close()
+
+
 
     
 

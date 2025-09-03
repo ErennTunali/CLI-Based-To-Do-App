@@ -29,5 +29,11 @@ Commands:
     elif command == 'list':
         tasks = listTasks(databasePath)
         print(tasks)
-    
+    elif command == 'done':
+        tasks = listTasks(databasePath)
+        print(tasks)
+        task = input('Enter task id to be updated: ')
+        completeTask(databasePath, task)
+        
+
     
